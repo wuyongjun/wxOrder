@@ -1,0 +1,48 @@
+/* page/Ad/verify/verify.wxss */
+.content{
+  padding: 15rpx
+}
+.form-item{
+  font-size: 28rpx;
+color: #333333;
+letter-spacing: -0.67px;
+margin-top: 30rpx
+}
+.content input{
+    font-size: 32rpx;
+  height: 80rpx;
+color: #333;
+letter-spacing: -0.77px;
+  border-bottom: 1rpx solid #DFDFDF;
+  width:100%;
+  font-weight: 600
+}
+.icon{
+ width:26rpx;height:18rpx;margin-top:40rpx;
+ float:right;
+  
+}
+.content picker{
+    font-size: 32rpx;
+  height: 80rpx;
+color: #333;
+letter-spacing: -0.77px;
+  border-bottom: 1rpx solid #DFDFDF;
+  width:100%;
+  /* font-weight: 600 */
+}
+.verify{
+  width: 260rpx;
+  height: 80rpx;
+  background: #F58023;
+box-shadow: 0 8rpx 15rpx 0 rgba(245,128,35,0.50);
+border-radius: 100rpx;
+font-size: 32rpx;
+color: #FFFFFF;
+letter-spacing: -0.77rpx;
+margin-top: 100rpx;
+float: right
+}
+button::after {
+  border: none
+}

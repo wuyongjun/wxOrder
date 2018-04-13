@@ -1,0 +1,42 @@
+<!--page/Ad/apply/apply.wxml-->
+<view>
+  <view wx:for-items="{{orderInfo}}" wx:key="{{item.id}}" style='margin-top:10rpx;padding:20rpx 20rpx'>
+  <view style='display:flex'>
+          <view class='title'>
+            {{item.name}}
+          </view>
+          <view class='status'>正在审核中</view>
+        </view>
+    <view class='date' wx:for-items="{{item.datetime}}" wx:key="{{item.id}}">
+      <view style='font-size: 22rpx;color: #666666;letter-spacing: -0.53px;margin-bottom:20rpx;'> {{item.date}} {{item.week}}</view>
+
+      <view style='display:flex;padding:15rpx 0;border-top:1rpx solid #d8d8d8'>
+        <view class='time' wx:for-items="{{item.time}}" wx:key="{{item.id}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style='background: #F9F9F9;height:20rpx;width:100%'></view>
+  <view style='padding:26rpx'> <view style='width:100%;background:#f9f9f9;line-height:80rpx;text-align:center;height:80rpx;'>可接受预定场地时间不全</view></view>
+ 
+  <view style='padding:0rpx 20rpx'>
+    <view class='organization form_item'>
+      <view class='or_name'>社团名称</view>
+    <view class='con'>hhhh</view>
+    </view>
+    <view class='form_item'>
+      <view class='or_name'>使用用途</view>
+      <view class='con'>hhhh</view>
+    </view>
+    <view class='form_item'>
+      <scroll-view scroll-x="true">
+        <view style='display:flex'>
+          <view style='width:240rpx;height:240rpx;margin-right:30rpx' wx:for-items="{{tempFilePaths}}" wx:key="{{item.id}}">
+            <image style='width:240rpx;height:240rpx' src='{{item}}'></image>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

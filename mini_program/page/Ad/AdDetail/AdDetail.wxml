@@ -1,0 +1,62 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<view>
+  <image class="poster" src='{{siteinfo.site_obj.poster}}'></image>
+</view>
+<view class='mapIntro'>
+  <view style='display:flex'>
+    <view class='intro'>
+      <view bindtap="intoDetail" class="title" style='overflow:hidden'>
+        <image class='name' src='/image/venue_icon_name_default.png'></image>
+        <view class='nametext'>{{siteinfo.site_obj.title}}</view>
+      </view>
+      <view bindtap="intoDetail" class="addressView">
+        <image class='addressImg' src='/image/venue_icon_location_default.png'></image>
+        <view class='addressText'>{{siteinfo.site_obj.addr}}</view>
+      </view>
+    </view>
+    <view class='navView'>
+      <view class='navsec'>
+        <view class='navthir'>
+          <image class="daohang" bindtap='openloction'  data-id='{{siteinfo.site_obj.id}}' src='/image/venue_botton_navigation_default.png'></image>
+        </view>
+        <view class='navtext'>开启导航</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='blank'></view>
+<!-- <scroll-view  style='  background: #F9F9F9;' scroll-x="true">
+<view  class="des_container">
+<view wx:for="{{ dates }}" wx:key="" style='margin:20rpx 10rpx;background:#fff;'>
+ <view  style='width:140rpx;font-size: 28rpx;text-align:center;padding-top:10rpx' bindtap="intothisDay" data-id='{{item.date}}'>{{item.week}}</view>
+ <view style='width:140rpx;font-size: 23rpx;text-align:center;color:#999999' bindtap="intothisDay" data-id='{{item.date}}'>{{item.date}}</view>
+ <button style="width:116rpx;background: #FFFFFF;border: 1rpx solid #F5A623;border-radius: 100rpx;color:#F5A623;font-size:24rpx;height:50rpx;line-height:45rpx" bindtap='reserve' data-date="{{item.date}}">预定</button>
+</view>
+</view>
+</scroll-view> -->
+<view class='siteInfoView'>
+  <view class='siteInfotext'>场地信息</view>
+  <view class="flex-wrp">
+    <view class="flex-item" wx:for-items="{{siteinfo.site_obj.siteArray}}" wx:key="{{item.id}}">
+      <image class="posters" src='{{item.image}}'></image>
+      <view class='eachSite'>
+        <view style='display:flex'>
+          <view  class='siteNameText'>
+         {{item.name}}
+          </view>
+          <button class='orderbutton' bindtap='reserve' data-id="{{item.id}}">预定</button>
+        </view>
+        <view class='openTime'>
+          开放时间{{item.start}}~{{item.end}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='abstract'>
+  <view class='abtrText'>场馆简介</view>
+  <template is="wxParse" data="{{wxParseData:describe.nodes}}">{{siteinfo.site_obj.describe}}</template>
+</view>
+<!-- <view style='text-align:center' hidden="{{showloading}}"> 
+ <image style='text-align:center;width:100%;height:600rpx' src='../../../../image/loading3.gif'></image>
+ </view> -->

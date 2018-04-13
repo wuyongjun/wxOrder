@@ -1,0 +1,57 @@
+<!--page/Ad/submit/submit.wxml-->
+<view>
+  <view wx:for-items="{{orderInfo}}" wx:key="{{item.id}}" style='margin-top:10rpx;padding:20rpx 20rpx'>
+    <view class='title'>
+      {{item.name}}
+    </view>
+    <view class='date' wx:for-items="{{item.datetime}}" wx:key="{{item.id}}">
+      <view style='font-size: 22rpx;color: #666666;letter-spacing: -0.53px;margin-bottom:20rpx;'> {{item.date}} {{item.week}}</view>
+
+      <view style='display:flex;padding:15rpx 0;border-top:1rpx solid #d8d8d8'>
+        <view class='time' wx:for-items="{{item.time}}" wx:key="{{item.id}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style='background: #F9F9F9;height:20rpx;width:100%'></view>
+  <view style='padding:20rpx 20rpx'>
+    <view class='organization form_item'>
+      <view class='or_name'>社团名称</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{organization}}" range-key="name">
+        <view class="picker">
+           <view style='color:#666;float:left;' wx:if="{{!index}}"> 请选择您的社团</view>
+          <view style='color:#666;float:left;'>{{organization[index].name}}</view>
+          <image class='icon' bindtap='tap' wx:if="{{!closed}}" src='../../../image/my_botton_switch_default.png'></image>
+          <image class='icon' wx:if="{{closed}}" src='../../../image/my_botton_switch_pressed.png'></image>
+        </view>
+      </picker>
+    </view>
+    <view class='form_item'>
+      <view class='or_name'>使用用途</view>
+      <textarea class='textarea' placeholder='请填写您的使用用途' bindinput='bindinput'></textarea>
+    </view>
+    <view class='form_item'>
+      <view class='or_name'>上传照片</view>
+      <scroll-view scroll-x="true">
+        <view style='display:flex'>
+          <view style='width:240rpx;height:240rpx;margin-right:30rpx' wx:for-items="{{tempFilePaths}}" wx:key="{{item.id}}">
+            <image style='width:240rpx;height:240rpx' src='{{item}}' bindtap='del' data-path='{{item}}'></image>
+          </view>
+          <view style='width:240rpx;height:240rpx'>
+            <image style='width:240rpx;height:240rpx' bindtap="upload" src='../../../image/reserve_botton_uploadphotos_default.png'></image>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='radio'>
+      <radio-group class="radio-group" bindtap="radioChange" data-checked="{{checked}}">
+        <label class="radio">
+          <view style='float:left;margin-left:30rpx;'> 可接受预定场地时间不全</view>
+          <radio style='float:right' value="可接受预定场地时间不全" color='#F58023' checked="{{checked}}" />
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <button class="submit" bindtap='submit'>提交预定</button>
+</view>

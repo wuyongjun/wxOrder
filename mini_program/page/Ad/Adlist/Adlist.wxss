@@ -1,0 +1,40 @@
+.content{
+  padding: 30rpx
+}
+.poster{
+  width: 100%;
+  border-radius: 15rpx
+}
+.view_poster{
+  text-align: center
+}
+page{
+  background-color:#fff;
+  border-top: 1px solid #f8f8f8;
+}
+.list{
+  padding-bottom:150rpx
+}
+button::after{
+border: none;
+}
+.title{
+  /* float: left; */
+  /* padding-left: 40rpx; */
+  color: d8d8d8;
+  font-weight: 400;
+  font-family: "微软雅黑";
+  font-size:30rpx;
+}
+.intro{
+  width:63%
+}
+.addr{
+  font-size: 24rpx;
+  color: #999999;
+}
+.loading{
+  text-align:center;
+  width:65%;
+  height:350rpx
+}

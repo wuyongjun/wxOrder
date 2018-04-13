@@ -1,0 +1,169 @@
+@import "../../../wxParse/wxParse.wxss";
+
+.poster {
+  width: 100%;
+}
+.posters{
+  width:336rpx;
+  height: 336rpx
+}
+.title {
+  /* padding-left: 40rpx; */
+  color: d8d8d8;
+  font-weight: 400;
+  font-family: "微软雅黑";
+  font-size: 30rpx;
+}
+.mapIntro{
+  padding:10rpx 30rpx 20rpx 30rpx;
+}
+.intro{
+  width:80%;
+  border-right:1rpx solid #D8D8D8
+}
+.orderbutton{
+background: #FFFFFF;
+border: 1rpx solid #F58023;
+border-radius: 100rpx;
+width: 100rpx;
+height: 40rpx;
+font-size: 20rpx;
+color: #F58023;
+letter-spacing: -0.48rpx;
+line-height:38rpx;
+margin-top:6rpx;
+/* margin-left:86rpx; */
+padding-left:10px;
+padding-right:10px;
+
+}
+.map_container {
+  height: 350px;
+  width: 100%;
+}
+
+.name {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 28rpx;
+  float:left;
+  margin-top:8rpx;
+}
+.nametext{
+  float:left;
+  font-size:30rpx;
+}
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.addressImg {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 28rpx;
+  float:left;
+  margin-top:8rpx;
+}
+.addressView{
+  /* padding-left: 40rpx; */
+  color: d8d8d8;
+  font-weight: 400;
+  font-family: "微软雅黑";
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+.addressText{
+  float:left;
+  font-size:30rpx;
+}
+.daohang {
+  width: 50rpx;
+  height: 50rpx;
+  /* float: right; */
+}
+.blank{
+  background: #F9F9F9;
+  height:20rpx;
+  width:100%
+}
+.navView{
+  width:20%
+}
+.navsec{
+  margin-left:48rpx
+}
+.navthir{
+  text-align: center;
+}
+.navtext{
+  font-size:20rpx;
+  width:100%;
+  text-align:center;
+}
+.siteInfoView{
+padding:10px 20rpx
+}
+.siteInfotext{
+  padding:15rpx 15rpx 0rpx 15rpx;
+}
+.place_info {
+  padding: 0 5px;
+}
+.eachSite{
+  padding-left:12rpx
+}
+.siteNameText{
+  font-size: 32rpx;
+  color: #333333;
+  width:80%;
+ text-align:left;
+
+}
+.openTime{
+  font-size: 24rpx;
+  color: #666666;
+  text-align: left
+}
+.abstract{
+  padding-top:50rpx;
+  padding:10px 20rpx
+}
+.abtrText{
+  padding:0 15rpx;
+}
+.wxParse-h1{
+  text-indent:28px;
+  padding-left: 16rpx;
+  font-size: 30rpx;
+color: #666666;
+font-weight: normal;
+letter-spacing: -0.72px;
+}
+.choose{
+  color: #F5A623;
+}
+.choosed{
+  border-bottom: 6rpx solid #F5A623;
+}
+.date{
+  color: #999999;
+}
+.weekname{
+  color: #353535;
+}
+.flex-wrp{
+  display: flex;
+  width:100%;
+  flex-wrap:wrap;
+  padding-bottom:20rpx;
+  flex-direction:row;
+  margin-top: 30rpx
+}
+.flex-item{
+  width:50%;
+text-align:center;
+}
+button::after{
+  border: none
+}

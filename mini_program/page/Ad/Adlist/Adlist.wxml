@@ -1,0 +1,47 @@
+<import src="../../common/foot.wxml" />
+<!-- <view style="padding:15rpx">
+   <view class="section__title"></view>
+  <view hidden="{{showloading==false}}">
+  <picker  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+距离<image style="width:30rpx;height:20rpx" src='../../../image/down.png'></image>：<view class="picker" style="width:80%;float:right">
+      {{array[index]}}公里
+    </view>
+  </picker>
+  </view>
+</view> -->
+<view class='list'>
+  <view wx:for-items="{{Ad_list}}" wx:key="{{item.id}}">
+    <view class="content">
+      <view class="view_poster" bindtap="intoDetail" data-id='{{item.id}}'>
+        <image class="poster" src='{{item.poster}}'></image>
+      </view>
+      <view style='display:flex'>
+        <view class='intro'>
+          <view bindtap="intoDetail" data-id='{{item.id}}' class="title">{{item.title}}</view>
+          <view class='addr'>北京市海淀区中关村南大街1314号</view>
+        </view>
+        <!-- <view style='text-align:right'>
+          <view>
+          ￥35/小时
+          </view>
+          <view style='font-size: 24rpx;color: #999999;'>
+          线上预约价￥15/小时
+          </view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>
+<template is="footer" data="{{colors1: '#F58723',imgs:'../../../image/nav_icon_home_pressed.png',imgs3:'../../../image/nav_icon_my_default.png'}}" />
+<view style='text-align:center' hidden="{{showloading}}">
+  <image class='loading' src='../../../image/timg.gif'></image>
+</view>
+  <!-- <modal no-cancel="true" confirm-text="" hidden="{{binded}}">
+<view style='text-align:center;font-size: 36rpx;color: #000000;text-align: center;'>请您先绑定手机号</view>
+<view style='text-align: center;font-size: 30rpx;color: #888888;text-align: center;'>同学我们等您很久了！</view>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style=';width:100%;color:#F58023;border-top:1rpx solid #d8d8d8;'>绑定</button>
+</modal> -->
+<!-- <view style='text-align:center' wx:if="{{Ad_list.length==0}}"> 
+ <image  style='text-align:center;width:50%;height:250px' src='../../../image/timg.jpg'></image>
+  <view>当前范围内没有场馆 , 扩大范围看一看吧！！！</view>
+ </view> -->

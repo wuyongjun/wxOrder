@@ -1,0 +1,110 @@
+<import src="../../common/foot.wxml" />
+<view style='padding:20rpx;margin-bottom:100rpx;'>
+  <view style='background: #494D4E;box-shadow: 0 2rpx 5rpx 0 rgba(0,0,0,0.20);border-radius: 5rpx;height:140rpx;width:100%;display:flex'>
+    <view class="icon">
+      <image src='{{user.avatarUrl}}' style='width:100rpx;height:100rpx;border-radius:50%'></image>
+    </view>
+    <view class="nameTel" style='color: #FFFFFF;letter-spacing: -0.77px;'>
+      <view style='font-size: 32rpx;'>{{user.nickName}}</view>
+      <view style='font-size: 24rpx;'>
+        <view style='float:left'>tel:134044430340</view>
+        <image src='../../../image/user_botton_modify_white.png' style='width:20rpx;height:20rpx;float:left;margin:10rpx 40rpx' bindtap='amend'></image>
+      </view>
+    </view>
+    <view>
+      <!-- <button style="background: rgba(255,255,255,0.20);border: 1px solid rgba(255,255,255,0.40);border-radius: 100px;;width:155rpx;height:60rpx;font-size:24rpx;color:#fff;line-height:60rpx;margin:38rpx 60rpx;">身份验证</button> -->
+    </view>
+  </view>
+  <view>
+    <view style='display:flex' class='ordersucc'>
+      <image style='width:46rpx;height:40rpx;margin-top:28rpx;' src='../../../image/my_icon_reserve_default.png'></image>
+      <view style='width:95%;font-size:32rpx;margin:20rpx 30rpx;'>预定成功的场地 </view>
+      <view bindtap='tap' data-status="{{closedSuc}}" style='float:right'>
+        <image style='width:26rpx;height:18rpx;margin-top:40rpx;' src='../../../image/my_botton_switch_default.png' wx:if="{{!closedSuc}}"></image>
+        <image style='width:26rpx;height:18rpx;margin-top:40rpx;' src='../../../image/my_botton_switch_pressed.png' wx:if="{{closedSuc}}"></image>
+      </view>
+    </view>
+    <!-- 成功的场地信息 -->
+    <view wx:if="{{closedSuc}}">
+      <view wx:for-items="{{Ad_list}}" wx:key="{{item.id}}" style='margin-top:10rpx;padding:20rpx 20rpx'>
+        <view style='display:flex'>
+          <view class='title'>
+            {{item.name}}
+          </view>
+          <button class='appaybtn' bindtap='watchAppay' data-id='{{item.id}}'>查看预定申请</button>
+        </view>
+
+        <view class='date' wx:for-items="{{item.datetime}}" wx:key="{{item.id}}">
+          <view style='font-size: 22rpx;color: #666666;letter-spacing: -0.53px;margin-bottom:20rpx;'> {{item.date}} {{item.week}}</view>
+          <view style='display:flex;padding:15rpx 0;border-top:1rpx solid #d8d8d8'>
+            <view class='time' wx:for-items="{{item.time}}" wx:key="{{item.id}}">
+              {{item}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view style='display:flex' class='ordersucc'>
+      <image style='width:46rpx;height:40rpx;margin-top:28rpx;' src='../../../image/my_icon_wait_default.png'></image>
+      <view style='width:95%;font-size:32rpx;margin:20rpx 30rpx;'>待审核的场地 </view>
+      <view bindtap='tap2' data-status="{{closedCheck}}" style='float:right'>
+        <image style='width:26rpx;height:18rpx;margin-top:40rpx;' src='../../../image/my_botton_switch_default.png' wx:if="{{!closedCheck}}"></image>
+        <image style='width:26rpx;height:18rpx;margin-top:40rpx;' src='../../../image/my_botton_switch_pressed.png' wx:if="{{closedCheck}}"></image>
+      </view>
+    </view>
+    <view wx:if="{{closedCheck}}">
+ <view wx:for-items="{{checkList}}" wx:key="{{item.id}}" style='margin-top:10rpx;padding:20rpx 20rpx'>
+        <view style='display:flex'>
+          <view class='title'>
+            {{item.name}}
+          </view>
+          <button class='appaybtn' bindtap='watchAppay' data-id='{{item.id}}'>查看预定申请</button>
+        </view>
+
+        <view class='date' wx:for-items="{{item.datetime}}" wx:key="{{item.id}}">
+          <view style='font-size: 22rpx;color: #666666;letter-spacing: -0.53px;margin-bottom:20rpx;'> {{item.date}} {{item.week}}</view>
+          <view style='display:flex;padding:15rpx 0;border-top:1rpx solid #d8d8d8'>
+            <view class='time' wx:for-items="{{item.time}}" wx:key="{{item.id}}">
+              {{item}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view style='display:flex' class='ordersucc'>
+      <image style='width:46rpx;height:40rpx;margin-top:28rpx;' src='../../../image/my_icon_notpass_default.png'></image>
+      <view style='width:95%;font-size:32rpx;margin:20rpx 30rpx;'>未通过预约审核的场地 </view>
+      <view bindtap='tap3' data-status="{{closedFail}}" style='float:right'>
+        <image style='width:26rpx;height:18rpx;margin-top:40rpx;' src='../../../image/my_botton_switch_default.png' wx:if="{{!closedFail}}"></image>
+        <image style='width:26rpx;height:18rpx;margin-top:40rpx;' src='../../../image/my_botton_switch_pressed.png' wx:if="{{closedFail}}"></image>
+      </view>
+    </view>
+    <view wx:if="{{closedFail}}">
+    <view wx:for-items="{{failList}}" wx:key="{{item.id}}" style='margin-top:10rpx;padding:20rpx 20rpx'>
+        <view style='display:flex'>
+          <view class='title'>
+            {{item.name}}
+          </view>
+          <button class='appaybtn' bindtap='watchAppay' data-id='{{item.id}}'>查看预定申请</button>
+        </view>
+
+        <view class='date' wx:for-items="{{item.datetime}}" wx:key="{{item.id}}">
+          <view style='font-size: 22rpx;color: #666666;letter-spacing: -0.53px;margin-bottom:20rpx;'> {{item.date}} {{item.week}}</view>
+          <view style='display:flex;padding:15rpx 0;border-top:1rpx solid #d8d8d8'>
+            <view class='time' wx:for-items="{{item.time}}" wx:key="{{item.id}}">
+              {{item}}
+            </view>
+          </view>
+        </view>
+      </view>
+      </view>
+  </view>
+</view>
+<template is="footer" data="{{colors: '#F58723',imgs:'../../../image/nav_icon_home_default.png',imgs3:'../../../image/nav_icon_my_pressed.png'}}" />
+<!-- <view style='text-align:center' hidden="{{showloading}}">
+  <image style='text-align:center;width:65%;height:350rpx' src='../../../image/timg.gif'></image>
+</view> -->

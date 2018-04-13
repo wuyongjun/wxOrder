@@ -1,0 +1,17 @@
+<!--page/Ad/login/login.wxml-->
+<view class='content'>
+    <view class='phone'>
+      手机号
+    </view>
+    <view class='phoneInput'>
+      <input placeholder="请输入您的手机号" auto-focus bindinput='bindphone' type="number" value='{{phone}}'/>
+    </view>
+  <view class='code'>
+    验证码
+  </view>
+  <view class="codeInput">
+    <input placeholder="请输入验证码" bindinput='bindcode' type="number"/>
+    <button class='codebutton' bindtap='reqIdentifyCode' disabled="{{identifyCode_btn}}">{{button_reqIdentifyCode}}</button>
+  </view>
+  <button class='login' bindtap='login'>绑定手机号</button>
+</view>

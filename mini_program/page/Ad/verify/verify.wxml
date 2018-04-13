@@ -1,0 +1,64 @@
+<!--page/Ad/verify/verify.wxml-->
+<view class='content'>
+  <view class='form-item name'>
+    姓名（必填）
+  </view>
+  <view class=''>
+    <input bindinput='bindName'/>
+  </view>
+  <view class='form-item name'>
+    学号/教师证号（必填）
+  </view>
+  <view class=''>
+    <input bindinput='bindStudent_id'/>
+  </view>
+  <view class=''>
+    <view class='form-item name'>
+      性别
+    </view>
+    <picker bindchange="bindPickerChange1" value="{{index}}" range="{{gender}}" range-key='name'>
+      <view class="picker">
+    <view style='color:#666;float:left;'  wx:if="{{!index}}">请选择您的性别</view>
+      <view style='color:#333;float:left;'>{{gender[index].name}}</view><image class='icon' bindtap='tap' wx:if="{{!closed}}" src='../../../image/my_botton_switch_default.png'></image>
+ <image class='icon' wx:if="{{closed}}" src='../../../image/my_botton_switch_pressed.png'></image>
+      </view>
+    </picker>
+  </view>
+  <view class=''>
+    <view class='form-item name'>
+      入学年
+    </view>
+    <picker bindchange="bindPickerChange2" value="{{index1}}" range="{{entrance}}" range-key='name'>
+      <view class="picker">
+         <view style='color:#666;float:left;'  wx:if="{{!index1}}">请选择您的入学年</view>
+      <view style='color:#333;float:left;'>{{entrance[index1].name}}</view>
+       <image class='icon' src='../../../image/my_botton_switch_default.png'></image>  
+      </view>
+    </picker>
+  </view>
+  <view class=''>
+    <view class='form-item name'>
+      院系
+    </view>
+    <picker bindchange="bindPickerChange3" value="{{index2}}" range="{{department}}" range-key='name'>
+      <view class="picker">
+         <view style='color:#666;float:left;' wx:if="{{!index2}}">请选择您的院系</view>
+         <view style='color:#333;float:left;'> {{department[index2].name}}</view>
+       <image class='icon' src='../../../image/my_botton_switch_default.png'></image>
+      </view>
+    </picker>
+  </view>
+  <view class=''>
+    <view class='form-item name'>
+      最高学历
+    </view>
+    <picker bindchange="bindPickerChange4" value="{{index3}}" range="{{education}}" range-key='name'>
+      <view class="picker">
+      <view style='color:#666;float:left;' wx:if="{{!index3}}">请选择您的学历</view>
+       <view style='color:#333;float:left;'> {{education[index3].name}}</view>
+       <image class='icon' src='../../../image/my_botton_switch_default.png'></image>
+      </view>
+    </picker>
+  </view>
+  <button class="verify" bindtap='verify'>开始验证</button>
+</view>

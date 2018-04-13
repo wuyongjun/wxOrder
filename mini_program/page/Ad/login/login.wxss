@@ -1,0 +1,53 @@
+/* page/Ad/login/login.wxss */
+.content{
+  padding: 0 15rpx
+}
+.phone,.code{
+  font-size: 28rpx;
+color: #333333;
+letter-spacing: -0.67rpx;
+margin-top: 40rpx
+}
+.phoneInput input,.codeInput input{
+  font-size: 32rpx;
+  height: 80rpx;
+color: #999999;
+letter-spacing: -0.77px;
+  width:80%
+}
+.phoneInput,.codeInput{
+  height: 80rpx;
+   border-bottom: 1rpx solid #DFDFDF;
+}
+.codeInput{
+  position: relative
+  /* display: flex */
+}
+.codebutton{
+  position: absolute;
+  top: -3px;
+  right: 0px;
+  font-size: 20rpx;
+color: #F58023;
+letter-spacing: -0.48rpx;
+  width: 160rpx;
+  height: 56rpx;
+background: #FFFFFF;
+border: 1rpx solid #F58023;
+border-radius: 100rpx;
+}
+.login{
+  width: 260rpx;
+  height: 80rpx;
+  background: #FFD2AE;
+box-shadow: 0 8rpx 15rpx 0 rgba(245,128,35,0.50);
+border-radius: 100rpx;
+font-size: 32rpx;
+color: #FFFFFF;
+letter-spacing: -0.77rpx;
+margin-top: 100rpx;
+float: right
+}
+button::after {
+  border: none
+}

@@ -1,0 +1,77 @@
+/* page/Ad/submit/submit.wxss */
+.textarea{
+  width: 100%;
+  font-size: 32rpx;
+color: #333333;
+letter-spacing: -0.77px;
+}
+.title{
+  font-size: 32rpx;
+color: #333333;
+letter-spacing: -0.77rpx;
+font-weight: 600
+}
+.date{
+  font-size: 22rpx;
+color: #666666;
+letter-spacing: -0.53rpx;
+}
+.time{
+  margin-right: 15rpx;
+  width: 164rpx;
+  height: 50rpx;
+background: #5B5B5B;
+border: 1rpx solid #F4F4F4;
+font-size: 20rpx;
+color: #FFFFFF;
+letter-spacing: -0.48px;
+box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10);
+border-radius: 3px;
+text-align: center;
+line-height: 50rpx
+}
+.icon{
+ width:26rpx;height:18rpx;margin-top:25rpx;
+ float:right;
+  
+}
+.organization{
+  height: 110rpx
+}
+.or_name{
+  height: 59rpx;
+  font-size: 28rpx;
+color: #333333;
+letter-spacing: -0.67rpx;
+}
+.picker{
+  font-size: 32rpx;
+color: #333333;
+letter-spacing: -0.77px;
+}
+.submit{
+  width: 260rpx;
+  height: 80rpx;
+  background: #F58023;
+box-shadow: 0 8rpx 15rpx 0 rgba(245,128,35,0.50);
+border-radius: 100rpx;
+font-size: 32rpx;
+color: #FFFFFF;
+letter-spacing: -0.77rpx;
+margin-top: 100rpx;
+margin-right: 30rpx;
+float: right
+}
+button::after {
+  border: none
+}
+.radio{
+  background: #F9F9F9;
+  height: 80rpx;
+margin-top:30rpx;
+line-height:80rpx;
+}
+.form_item{
+  padding:30rpx 0;
+  border-bottom: 1rpx solid #d8d8d8
+}
